@@ -1,0 +1,33 @@
+HloModule IrToHlo.30
+
+ENTRY %IrToHlo.30 (p0.6: f32[6]) -> (f32[6]) {
+  %constant.22 = pred[] constant(true), metadata={op_type="xla__unselect" op_name="xla__unselect" source_file="_str@_patched_functions.py" source_line=58}
+  %broadcast.23 = pred[2]{0} broadcast(pred[] %constant.22), dimensions={}, metadata={op_type="xla__unselect" op_name="xla__unselect" source_file="_str@_patched_functions.py" source_line=58}
+  %constant.24 = pred[] constant(false), metadata={op_type="xla__unselect" op_name="xla__unselect" source_file="_str@_patched_functions.py" source_line=58}
+  %pad.27 = pred[6]{0} pad(pred[2]{0} %broadcast.23, pred[] %constant.24), padding=2_2, metadata={op_type="xla__unselect" op_name="xla__unselect" source_file="_str@_patched_functions.py" source_line=58}
+  %constant.8 = f32[] constant(1), metadata={op_type="prim__Constant" op_name="prim__Constant" source_file="_make_grads@__init__.py" source_line=52}
+  %reshape.9 = f32[1]{0} reshape(f32[] %constant.8), metadata={op_type="aten__expand" op_name="aten__expand"}
+  %broadcast.10 = f32[1]{0} broadcast(f32[1]{0} %reshape.9), dimensions={0}, metadata={op_type="aten__expand" op_name="aten__expand"}
+  %reshape.11 = f32[] reshape(f32[1]{0} %broadcast.10), metadata={op_type="aten__expand" op_name="aten__expand"}
+  %broadcast.12 = f32[2]{0} broadcast(f32[] %reshape.11), dimensions={}, metadata={op_type="aten__expand" op_name="aten__expand"}
+  %p0.6 = f32[6]{0} parameter(0), metadata={op_type="xla__device_data" op_name="xla__device_data" source_file="<module>@view_test.py" source_line=13}
+  %slice.7 = f32[2]{0} slice(f32[6]{0} %p0.6), slice={[2:4]}, metadata={op_type="xla__select" op_name="xla__select" source_file="_str@_patched_functions.py" source_line=58}
+  %multiply.15 = f32[2]{0} multiply(f32[2]{0} %broadcast.12, f32[2]{0} %slice.7), metadata={op_type="aten__mul" op_name="aten__mul"}
+  %multiply.13 = f32[2]{0} multiply(f32[2]{0} %broadcast.12, f32[2]{0} %slice.7), metadata={op_type="aten__mul" op_name="aten__mul"}
+  %constant.1 = f32[] constant(1), metadata={op_type="prim__Constant" op_name="prim__Constant"}
+  %reshape.2 = f32[1]{0} reshape(f32[] %constant.1), metadata={op_type="aten__expand" op_name="aten__expand"}
+  %broadcast.3 = f32[1]{0} broadcast(f32[1]{0} %reshape.2), dimensions={0}, metadata={op_type="aten__expand" op_name="aten__expand"}
+  %reshape.4 = f32[] reshape(f32[1]{0} %broadcast.3), metadata={op_type="aten__expand" op_name="aten__expand"}
+  %broadcast.5 = f32[2]{0} broadcast(f32[] %reshape.4), dimensions={}, metadata={op_type="aten__expand" op_name="aten__expand"}
+  %multiply.14 = f32[2]{0} multiply(f32[2]{0} %multiply.13, f32[2]{0} %broadcast.5), metadata={op_type="aten__mul" op_name="aten__mul"}
+  %add.16 = f32[2]{0} add(f32[2]{0} %multiply.15, f32[2]{0} %multiply.14), metadata={op_type="aten__add" op_name="aten__add"}
+  %constant.25 = f32[] constant(0), metadata={op_type="xla__unselect" op_name="xla__unselect" source_file="_str@_patched_functions.py" source_line=58}
+  %pad.26 = f32[6]{0} pad(f32[2]{0} %add.16, f32[] %constant.25), padding=2_2, metadata={op_type="xla__unselect" op_name="xla__unselect" source_file="_str@_patched_functions.py" source_line=58}
+  %constant.17 = f32[] constant(0), metadata={op_type="prim__Constant" op_name="prim__Constant"}
+  %reshape.18 = f32[1]{0} reshape(f32[] %constant.17), metadata={op_type="aten__expand" op_name="aten__expand"}
+  %broadcast.19 = f32[1]{0} broadcast(f32[1]{0} %reshape.18), dimensions={0}, metadata={op_type="aten__expand" op_name="aten__expand"}
+  %reshape.20 = f32[] reshape(f32[1]{0} %broadcast.19), metadata={op_type="aten__expand" op_name="aten__expand"}
+  %broadcast.21 = f32[6]{0} broadcast(f32[] %reshape.20), dimensions={}, metadata={op_type="aten__expand" op_name="aten__expand"}
+  %select.28 = f32[6]{0} select(pred[6]{0} %pad.27, f32[6]{0} %pad.26, f32[6]{0} %broadcast.21), metadata={op_type="xla__unselect" op_name="xla__unselect" source_file="_str@_patched_functions.py" source_line=58}
+  ROOT %tuple.29 = (f32[6]{0}) tuple(f32[6]{0} %select.28)
+}

@@ -1,0 +1,93 @@
+{
+	"$schema": "vscode://schemas/color-theme",
+	"name": "Visual Studio Light (HLO)",
+	"colors": {
+		"editor.background": "#FFFFFF",
+		"editor.foreground": "#000000",
+		"editor.inactiveSelectionBackground": "#E5EBF1",
+		"editorIndentGuide.background": "#D3D3D3",
+		"editorIndentGuide.activeBackground": "#939393",
+		"editor.selectionHighlightBackground": "#ADD6FF80",
+		"editorSuggestWidget.background": "#F3F3F3",
+		"editorWhitespace.foreground": "#2B91AF",
+		"activityBarBadge.background": "#007ACC",
+		"sideBarTitle.foreground": "#6F6F6F",
+		"list.hoverBackground": "#E8E8E8",
+		"input.placeholderForeground": "#767676",
+		"settings.textInputBorder": "#CECECE",
+		"settings.numberInputBorder": "#CECECE",
+		"statusBarItem.remoteForeground": "#FFF",
+		"statusBarItem.remoteBackground": "#16825D"
+	},
+	"tokenColors": [
+		{
+			"scope": [
+				"debugging-head.hlo",
+			],
+			"settings": {
+				"foreground": "#808080"
+			}
+		},
+		{
+			"scope": [
+				"graph-boundaries.hlo",
+			],
+			"settings": {
+				"foreground": "#3da835",
+				"fontStyle": "bold"
+			}
+		},
+        {
+            "scope": "primitive-type.hlo",
+            "settings": {
+                "foreground": "#0003c0"
+            }
+        },
+		{
+			"scope": [
+				"name.hlo",
+			],
+			"settings": {
+				"foreground": "#00a6ff"
+			}
+		},
+		{
+			"scope": "keyword.hlo",
+			"settings": {
+				"foreground": "#d912c8"
+			}
+		},
+		{
+			"scope": "number.hlo",
+			"settings": {
+				"foreground": "#48ce00"
+			}
+		},
+		{
+			"scope": "open.instruction.hlo",
+			"settings": {
+				"foreground": "#b4a803",
+				"fontStyle": "bold",
+			}
+		},
+		{
+			"scope": "paren.open.instruction.hlo",
+			"settings": {
+				"fontStyle": "bold underline",
+			}
+		},
+		{
+			"scope": "close.instruction.hlo",
+			"settings": {
+				"foreground": "#b4a803",
+				"fontStyle": "bold underline",
+			}
+		},
+		{
+			"scope": "string",
+			"settings": {
+				"foreground": "#a31515"
+			}
+		},
+	]
+}

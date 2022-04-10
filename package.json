@@ -1,0 +1,40 @@
+{
+    "name": "hlo-highlighter",
+    "displayName": "HLO HighLighter",
+    "description": "Syntax high lighter for XLA HLO IR.",
+    "version": "0.0.1",
+    "engines": {
+        "vscode": "^1.66.0"
+    },
+    "categories": [
+        "Programming Languages",
+		"Themes"
+    ],
+    "contributes": {
+        "languages": [{
+            "id": "hlo",
+            "aliases": ["HLO", "hlo"],
+            "extensions": [".hlo"],
+            "configuration": "./language-configuration.json"
+        }],
+        "grammars": [{
+            "language": "hlo",
+            "scopeName": "source.hlo",
+            "path": "./syntaxes/hlo.tmLanguage.json"
+        }],
+		"themes": [
+			{
+				"id": "Visual Studio Dark - HLO",
+				"label": "Dark (Visual Studio - HLO)",
+				"uiTheme": "vs-dark",
+				"path": "./themes/dark.json"
+			},
+			{
+				"id": "Visual Studio Light - HLO",
+				"label": "Light (Visual Studio - HLO)",
+				"uiTheme": "vs",
+				"path": "./themes/light.json"
+			}
+		]
+    }
+}
