@@ -4,6 +4,7 @@
     "description": "Syntax high lighter for XLA HLO IR.",
     "version": "0.0.1",
     "repository": "https://github.com/hjmus/hlo-highlighter.git",
+    "publisher": "Junmin Hao",
     "engines": {
         "vscode": "^1.66.0"
     },
