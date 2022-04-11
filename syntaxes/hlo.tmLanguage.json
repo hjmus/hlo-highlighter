@@ -30,7 +30,7 @@
 	"repository": {
 		"debugging-head": {
 			"begin": "\\[ScheduleSyncTensorsGraph\\]",
-			"end": "Hashes\\: \\([a-f0-9]+\\)",
+			"end": "Hashes\\: \\([a-f0-9, ]+\\)",
 			"beginCaptures": {
 			  	"0": { "name": "debugging-head.open.hlo" }
 			},
